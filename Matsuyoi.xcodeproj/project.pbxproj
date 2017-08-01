@@ -15,6 +15,17 @@
 		188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188418B91F2C3A8E00728BD9 /* LaunchScreen.storyboard */; };
 		188418C61F2C3A8E00728BD9 /* MatsuyoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418C51F2C3A8E00728BD9 /* MatsuyoiTests.swift */; };
 		188418D11F2C3A8E00728BD9 /* MatsuyoiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418D01F2C3A8E00728BD9 /* MatsuyoiUITests.swift */; };
+		188418DF1F2C430900728BD9 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418DE1F2C430900728BD9 /* CustomKolodaView.swift */; };
+		188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */; };
+		18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */; };
+		18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */; };
+		18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BCED911F30555D00E2972C /* CustomOverlayView.xib */; };
+		18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB1EE71F30AAAA00D08D2C /* MapKit.framework */; };
+		18FC32691F2F29D0008B891D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC32681F2F29D0008B891D /* SettingViewController.swift */; };
+		18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */; };
+		1B2078AA1C31B63AAF77344C /* Pods_MatsuyoiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */; };
+		4B031251EC16091E5CE8D95B /* Pods_Matsuyoi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC12ECFA490087258EA5785 /* Pods_Matsuyoi.framework */; };
+		73E7C4FBD98F82F210B09D7E /* Pods_MatsuyoiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F9A888C07C6B1D3CB7F7BFC /* Pods_MatsuyoiUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,23 @@
 		188418CC1F2C3A8E00728BD9 /* MatsuyoiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatsuyoiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188418D01F2C3A8E00728BD9 /* MatsuyoiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatsuyoiUITests.swift; sourceTree = "<group>"; };
 		188418D21F2C3A8E00728BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188418DE1F2C430900728BD9 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		18BCED911F30555D00E2972C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		18EB1EE71F30AAAA00D08D2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		18FC32681F2F29D0008B891D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matsuyoi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi.debug.xcconfig"; sourceTree = "<group>"; };
+		4F9A888C07C6B1D3CB7F7BFC /* Pods_MatsuyoiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatsuyoiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC12ECFA490087258EA5785 /* Pods_Matsuyoi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matsuyoi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71252FE6ED3EEF098FBB4DE5 /* Pods-MatsuyoiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatsuyoiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatsuyoiUITests/Pods-MatsuyoiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		958A9219DF766A29B0B0A200 /* Pods-MatsuyoiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatsuyoiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatsuyoiTests/Pods-MatsuyoiTests.release.xcconfig"; sourceTree = "<group>"; };
+		A095C7F612FAB2FC5819CAB3 /* Pods-MatsuyoiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatsuyoiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatsuyoiTests/Pods-MatsuyoiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2574624EF0BA7C6FC036A6E /* Pods-Matsuyoi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matsuyoi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi.release.xcconfig"; sourceTree = "<group>"; };
+		A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatsuyoiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E370E93EB319A37BB70E324A /* Pods-MatsuyoiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatsuyoiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatsuyoiUITests/Pods-MatsuyoiUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */,
+				4B031251EC16091E5CE8D95B /* Pods_Matsuyoi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2078AA1C31B63AAF77344C /* Pods_MatsuyoiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E7C4FBD98F82F210B09D7E /* Pods_MatsuyoiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +114,8 @@
 				188418AC1F2C3A8E00728BD9 /* Matsuyoi */,
 				188418C41F2C3A8E00728BD9 /* MatsuyoiTests */,
 				188418CF1F2C3A8E00728BD9 /* MatsuyoiUITests */,
-				188418AB1F2C3A8E00728BD9 /* Products */,
+				D59A889AAB5F251E8575DD71 /* Pods */,
+				B71C1E0CA097D42F4E91C515 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +127,7 @@
 				188418CC1F2C3A8E00728BD9 /* MatsuyoiUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		188418AC1F2C3A8E00728BD9 /* Matsuyoi */ = {
@@ -101,9 +135,16 @@
 			children = (
 				188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */,
 				188418AF1F2C3A8E00728BD9 /* ViewController.swift */,
+				18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */,
+				18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */,
+				18FC32681F2F29D0008B891D /* SettingViewController.swift */,
 				188418B11F2C3A8E00728BD9 /* Main.storyboard */,
+				188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */,
+				188418DE1F2C430900728BD9 /* CustomKolodaView.swift */,
+				18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */,
 				188418B71F2C3A8E00728BD9 /* Assets.xcassets */,
 				188418B91F2C3A8E00728BD9 /* LaunchScreen.storyboard */,
+				18BCED911F30555D00E2972C /* CustomOverlayView.xib */,
 				188418BC1F2C3A8E00728BD9 /* Info.plist */,
 				188418B41F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld */,
 			);
@@ -122,10 +163,35 @@
 		188418CF1F2C3A8E00728BD9 /* MatsuyoiUITests */ = {
 			isa = PBXGroup;
 			children = (
+				188418AB1F2C3A8E00728BD9 /* Products */,
 				188418D01F2C3A8E00728BD9 /* MatsuyoiUITests.swift */,
 				188418D21F2C3A8E00728BD9 /* Info.plist */,
 			);
 			path = MatsuyoiUITests;
+			sourceTree = "<group>";
+		};
+		B71C1E0CA097D42F4E91C515 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18EB1EE71F30AAAA00D08D2C /* MapKit.framework */,
+				5CC12ECFA490087258EA5785 /* Pods_Matsuyoi.framework */,
+				A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */,
+				4F9A888C07C6B1D3CB7F7BFC /* Pods_MatsuyoiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D59A889AAB5F251E8575DD71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */,
+				A2574624EF0BA7C6FC036A6E /* Pods-Matsuyoi.release.xcconfig */,
+				A095C7F612FAB2FC5819CAB3 /* Pods-MatsuyoiTests.debug.xcconfig */,
+				958A9219DF766A29B0B0A200 /* Pods-MatsuyoiTests.release.xcconfig */,
+				71252FE6ED3EEF098FBB4DE5 /* Pods-MatsuyoiUITests.debug.xcconfig */,
+				E370E93EB319A37BB70E324A /* Pods-MatsuyoiUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188418D51F2C3A8E00728BD9 /* Build configuration list for PBXNativeTarget "Matsuyoi" */;
 			buildPhases = (
+				801482AF92AE7FDFE28FA6BF /* [CP] Check Pods Manifest.lock */,
 				188418A61F2C3A8E00728BD9 /* Sources */,
 				188418A71F2C3A8E00728BD9 /* Frameworks */,
 				188418A81F2C3A8E00728BD9 /* Resources */,
+				2AB6A47D0BE8661779D3AD3A /* [CP] Embed Pods Frameworks */,
+				0571A148E9D390EC4AACBAE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188418D81F2C3A8E00728BD9 /* Build configuration list for PBXNativeTarget "MatsuyoiTests" */;
 			buildPhases = (
+				363E9E88683BD2F2D82F64B0 /* [CP] Check Pods Manifest.lock */,
 				188418BD1F2C3A8E00728BD9 /* Sources */,
 				188418BE1F2C3A8E00728BD9 /* Frameworks */,
 				188418BF1F2C3A8E00728BD9 /* Resources */,
+				3818994E9C483BB4662EF402 /* [CP] Embed Pods Frameworks */,
+				676FBC61391E3F155874AD14 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188418DB1F2C3A8E00728BD9 /* Build configuration list for PBXNativeTarget "MatsuyoiUITests" */;
 			buildPhases = (
+				E5F2EA67FBEED35FB2FFC7EA /* [CP] Check Pods Manifest.lock */,
 				188418C81F2C3A8E00728BD9 /* Sources */,
 				188418C91F2C3A8E00728BD9 /* Frameworks */,
 				188418CA1F2C3A8E00728BD9 /* Resources */,
+				04AA1C8F444D60B8B3071E3E /* [CP] Embed Pods Frameworks */,
+				DD3599C4EB644B200D77C797 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +271,7 @@
 				TargetAttributes = {
 					188418A91F2C3A8E00728BD9 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = RHNH48U726;
 						ProvisioningStyle = Automatic;
 					};
 					188418C01F2C3A8E00728BD9 = {
@@ -237,6 +313,7 @@
 			files = (
 				188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */,
 				188418B81F2C3A8E00728BD9 /* Assets.xcassets in Resources */,
+				18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */,
 				188418B31F2C3A8E00728BD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,14 +334,158 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04AA1C8F444D60B8B3071E3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatsuyoiUITests/Pods-MatsuyoiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0571A148E9D390EC4AACBAE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AB6A47D0BE8661779D3AD3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		363E9E88683BD2F2D82F64B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3818994E9C483BB4662EF402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatsuyoiTests/Pods-MatsuyoiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		676FBC61391E3F155874AD14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatsuyoiTests/Pods-MatsuyoiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		801482AF92AE7FDFE28FA6BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3599C4EB644B200D77C797 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatsuyoiUITests/Pods-MatsuyoiUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F2EA67FBEED35FB2FFC7EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		188418A61F2C3A8E00728BD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */,
 				188418B61F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld in Sources */,
+				188418DF1F2C430900728BD9 /* CustomKolodaView.swift in Sources */,
+				18FC32691F2F29D0008B891D /* SettingViewController.swift in Sources */,
 				188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */,
 				188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */,
+				18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */,
+				18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */,
+				18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,9 +637,12 @@
 		};
 		188418D61F2C3A8E00728BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RHNH48U726;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Life-Cloud.Matsuyoi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,9 +652,12 @@
 		};
 		188418D71F2C3A8E00728BD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2574624EF0BA7C6FC036A6E /* Pods-Matsuyoi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RHNH48U726;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Life-Cloud.Matsuyoi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,6 +667,7 @@
 		};
 		188418D91F2C3A8E00728BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A095C7F612FAB2FC5819CAB3 /* Pods-MatsuyoiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +682,7 @@
 		};
 		188418DA1F2C3A8E00728BD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958A9219DF766A29B0B0A200 /* Pods-MatsuyoiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +697,7 @@
 		};
 		188418DC1F2C3A8E00728BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71252FE6ED3EEF098FBB4DE5 /* Pods-MatsuyoiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MatsuyoiUITests/Info.plist;
@@ -481,6 +711,7 @@
 		};
 		188418DD1F2C3A8E00728BD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E370E93EB319A37BB70E324A /* Pods-MatsuyoiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MatsuyoiUITests/Info.plist;
@@ -511,6 +742,7 @@
 				188418D71F2C3A8E00728BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		188418D81F2C3A8E00728BD9 /* Build configuration list for PBXNativeTarget "MatsuyoiTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +751,7 @@
 				188418DA1F2C3A8E00728BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		188418DB1F2C3A8E00728BD9 /* Build configuration list for PBXNativeTarget "MatsuyoiUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +760,7 @@
 				188418DD1F2C3A8E00728BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
