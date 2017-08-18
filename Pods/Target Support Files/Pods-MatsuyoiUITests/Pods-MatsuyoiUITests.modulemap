@@ -1,0 +1,6 @@
+framework module Pods_MatsuyoiUITests {
+  umbrella header "Pods-MatsuyoiUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

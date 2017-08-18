@@ -9,49 +9,162 @@
 import UIKit
 import ZKCarousel
 import MapKit
+import SafariServices
+import FloatRatingView
+import KRProgressHUD
+import FloatRatingView
+import CoreLocation
+import Alamofire
 
-
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,FloatRatingViewDelegate{
 
     @IBOutlet weak var mapPoint: MKMapView!
+    let userDefaults = UserDefaults.standard //UserDefalut
+
     var SelectedList:[SpotList] = []
     var SelectedUrl:String? = nil
     var SelectedInfo:String? = nil
     var SelectedName:String? = nil
+    var SelectedScore:String? = nil
+    var SelectedCategory:String? = nil
+    var SelectedLat:String? = nil
+    var SelectedLng:String? = nil
+    var currentLat:Double = 0.0
+    var currentLng:Double  = 0.0
+    var doubleLat:Double = 0.0
+    var doubleLng:Double = 0.0
     
     // Instantiated and used with Storyboards
     @IBOutlet var carousel: ZKCarousel! = ZKCarousel()
-    
+    @IBOutlet weak var floatRatingView: FloatRatingView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        KRProgressHUD.show()
+//        KRProgressHUD.show(withMessage: "Loading...") {
+//            print("セル選択")
+//        }
+        //受け取りデータ
+        currentLat = userDefaults.double(forKey: "lat")
+        currentLng = userDefaults.double(forKey: "lng")
+        SelectedUrl = SelectedList[0].url
+        SelectedInfo = SelectedList[0].info
+        SelectedName = SelectedList[0].name
+        SelectedScore = SelectedList[0].score
+        SelectedCategory = SelectedList[0].category
+        SelectedLat = SelectedList[0].lat
+        SelectedLng = SelectedList[0].lng
+    
+        //レビュー星の設定
+        self.floatRatingView.emptyImage = UIImage(named: "StarEmpty")
+        self.floatRatingView.fullImage = UIImage(named: "StarFull")
+        // Optional params
+        self.floatRatingView.delegate = self
+        self.floatRatingView.contentMode = UIViewContentMode.scaleAspectFit
+        self.floatRatingView.maxRating = 5
+        self.floatRatingView.minRating = 1
+        self.floatRatingView.editable = false
+        self.floatRatingView.floatRatings = true
+        self.floatRatingView.halfRatings = true
         
-        let coordinate = CLLocationCoordinate2DMake(37.331652997806785, -122.03072304117417)
+        scoreLabel.text = SelectedScore!
+        let floatScore = Float(SelectedScore!)
+        self.floatRatingView.rating = floatScore!
+        categoryLabel.text = SelectedCategory
+        
+        //距離の計算
+        doubleLat = Double(SelectedLat!)!
+        doubleLng = Double(SelectedLng!)!
+        let currentLocation: CLLocation = CLLocation(latitude: currentLat, longitude: currentLng)
+        let goalLocation: CLLocation = CLLocation(latitude: doubleLat, longitude: doubleLng)
+        let distance = goalLocation.distance(from: currentLocation)
+        distanceLabel.text = String(Int(distance)) + "m"
+
+        //MapKit設定
+        let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(doubleLat), CLLocationDegrees(doubleLng))
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegionMake(coordinate, span)
         mapPoint.setRegion(region, animated:true)
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(37.331652997806785, -122.03072304117417)
+        annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(doubleLat), CLLocationDegrees(doubleLng))
         self.mapPoint.addAnnotation(annotation)
-        
-        SelectedUrl = SelectedList[0].url
-        SelectedInfo = SelectedList[0].info
-        SelectedName = SelectedList[0].name
-        
-        print(SelectedUrl)
-        
+
         if(SelectedUrl != nil){
             // Setup
-            self.setupCarousel()
+            self.checkNetwork()
         }
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
     }
+
     
+    @IBAction func openInfo(_ sender: Any) {
+        let vc = SFSafariViewController(url: NSURL(string: SelectedInfo!)! as URL)
+        present(vc, animated: true, completion: nil)
+    }
+    @IBAction func tapAction(_ sender: Any) {
+        
+        // styleをActionSheetに設定
+        let alertSheet = UIAlertController(title: "経路", message: "アプリを開きます", preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        // 自分の選択肢を生成
+        
+        let action2 = UIAlertAction(title: "Google Maps", style: UIAlertActionStyle.default, handler: {
+            (action: UIAlertAction!) in
+            print("google")
+            UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)
+            let urlStr:String = "comgooglemaps://?daddr=\(self.doubleLat),\(self.doubleLng)&directionsmode=walking&zoom=14"
+            
+            UIApplication.shared.openURL(NSURL(string:urlStr)! as URL)
+            
+        })
+        
+        let action3 = UIAlertAction(title: "cancel", style: UIAlertActionStyle.cancel, handler: {
+            (action: UIAlertAction!) in
+        })
+        
+        // アクションを追加.
+        alertSheet.addAction(action2)
+        alertSheet.addAction(action3)
+        
+        self.present(alertSheet, animated: true, completion: nil)
+    }
+        //位置情報更新
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        currentLat = (location?.coordinate.latitude)!
+        currentLng = (location?.coordinate.longitude)!
+        userDefaults.set(currentLat, forKey: "lat")
+        userDefaults.set(currentLng, forKey: "lng")
+        print("latitude: \(currentLat)\nlongitude: \(currentLng)")
+    }
+
+    func checkNetwork(){
+        let net = NetworkReachabilityManager()
+        net?.startListening()
+        if  net?.isReachable ?? false {
+            
+            if ((net?.isReachableOnEthernetOrWiFi) != nil) {
+                //do some
+                setupCarousel()
+                
+            }else if(net?.isReachableOnWWAN)! {
+                //do some
+                setupCarousel()
+            }
+        } else {
+            //オフライン
+            print("no connection")
+        }
+    }
     func setupCarousel() {
         
         let url: NSURL = NSURL(string:SelectedUrl!)!  //urlの文字列を与えてNSURLのインスタンスを作成
@@ -63,7 +176,14 @@ class DetailViewController: UIViewController {
         let slideArray = [slide]
         // Add the slides to the carousel
         self.carousel.slides = slideArray
-    
+//        KRProgressHUD.dismiss()
+    }
+
+    func floatRatingView(_ ratingView: FloatRatingView, isUpdating rating:Float) {
+        //        self.liveLabel.text = NSString(format: "%.2f", self.floatRatingView.rating) as String
+    }
+    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Float) {
+        //        self.updatedLabel.text = NSString(format: "%.2f", self.floatRatingView.rating) as String
     }
 
 }

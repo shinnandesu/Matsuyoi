@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1815A6D41F39940200DAA686 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815A6D31F39940200DAA686 /* CoreLocation.framework */; };
+		1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */; };
+		18817CF41F319B420047353F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18817CF31F319B420047353F /* LoginViewController.swift */; };
 		188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */; };
 		188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AF1F2C3A8E00728BD9 /* ViewController.swift */; };
 		188418B31F2C3A8E00728BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188418B11F2C3A8E00728BD9 /* Main.storyboard */; };
 		188418B61F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 188418B41F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld */; };
-		188418B81F2C3A8E00728BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188418B71F2C3A8E00728BD9 /* Assets.xcassets */; };
 		188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188418B91F2C3A8E00728BD9 /* LaunchScreen.storyboard */; };
 		188418C61F2C3A8E00728BD9 /* MatsuyoiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418C51F2C3A8E00728BD9 /* MatsuyoiTests.swift */; };
 		188418D11F2C3A8E00728BD9 /* MatsuyoiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418D01F2C3A8E00728BD9 /* MatsuyoiUITests.swift */; };
 		188418DF1F2C430900728BD9 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418DE1F2C430900728BD9 /* CustomKolodaView.swift */; };
 		188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */; };
+		188FB40C1F440B2200C4A080 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40B1F440B2200C4A080 /* SettingsViewController.swift */; };
+		188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40E1F4426E000C4A080 /* ProfileViewController.swift */; };
+		188FB4111F447AD000C4A080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188FB4101F447AD000C4A080 /* Assets.xcassets */; };
+		188FB4141F4483CA00C4A080 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4131F4483CA00C4A080 /* CustomCells.swift */; };
+		188FB4161F44876700C4A080 /* LocationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4151F44876700C4A080 /* LocationSettingViewController.swift */; };
 		18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */; };
 		18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */; };
 		18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BCED911F30555D00E2972C /* CustomOverlayView.xib */; };
 		18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB1EE71F30AAAA00D08D2C /* MapKit.framework */; };
-		18FC32691F2F29D0008B891D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC32681F2F29D0008B891D /* SettingViewController.swift */; };
 		18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */; };
 		1B2078AA1C31B63AAF77344C /* Pods_MatsuyoiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */; };
 		4B031251EC16091E5CE8D95B /* Pods_Matsuyoi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC12ECFA490087258EA5785 /* Pods_Matsuyoi.framework */; };
@@ -46,12 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1815A6D31F39940200DAA686 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		18817CF31F319B420047353F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		188418AA1F2C3A8E00728BD9 /* Matsuyoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matsuyoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188418AF1F2C3A8E00728BD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		188418B21F2C3A8E00728BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		188418B51F2C3A8E00728BD9 /* Matsuyoi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Matsuyoi.xcdatamodel; sourceTree = "<group>"; };
-		188418B71F2C3A8E00728BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188418BA1F2C3A8E00728BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		188418BC1F2C3A8E00728BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188418C11F2C3A8E00728BD9 /* MatsuyoiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatsuyoiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,11 +70,15 @@
 		188418D21F2C3A8E00728BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188418DE1F2C430900728BD9 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		188FB40B1F440B2200C4A080 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		188FB40E1F4426E000C4A080 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		188FB4101F447AD000C4A080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		188FB4131F4483CA00C4A080 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
+		188FB4151F44876700C4A080 /* LocationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSettingViewController.swift; sourceTree = "<group>"; };
 		18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		18BCED911F30555D00E2972C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		18EB1EE71F30AAAA00D08D2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		18FC32681F2F29D0008B891D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matsuyoi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi.debug.xcconfig"; sourceTree = "<group>"; };
 		4F9A888C07C6B1D3CB7F7BFC /* Pods_MatsuyoiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatsuyoiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1815A6D41F39940200DAA686 /* CoreLocation.framework in Frameworks */,
 				18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */,
 				4B031251EC16091E5CE8D95B /* Pods_Matsuyoi.framework in Frameworks */,
 			);
@@ -134,15 +147,20 @@
 			isa = PBXGroup;
 			children = (
 				188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */,
+				18817CF31F319B420047353F /* LoginViewController.swift */,
+				1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */,
 				188418AF1F2C3A8E00728BD9 /* ViewController.swift */,
 				18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */,
 				18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */,
-				18FC32681F2F29D0008B891D /* SettingViewController.swift */,
+				188FB40B1F440B2200C4A080 /* SettingsViewController.swift */,
+				188FB4151F44876700C4A080 /* LocationSettingViewController.swift */,
+				188FB40E1F4426E000C4A080 /* ProfileViewController.swift */,
 				188418B11F2C3A8E00728BD9 /* Main.storyboard */,
+				188FB4101F447AD000C4A080 /* Assets.xcassets */,
 				188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */,
 				188418DE1F2C430900728BD9 /* CustomKolodaView.swift */,
 				18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */,
-				188418B71F2C3A8E00728BD9 /* Assets.xcassets */,
+				188FB4131F4483CA00C4A080 /* CustomCells.swift */,
 				188418B91F2C3A8E00728BD9 /* LaunchScreen.storyboard */,
 				18BCED911F30555D00E2972C /* CustomOverlayView.xib */,
 				188418BC1F2C3A8E00728BD9 /* Info.plist */,
@@ -173,6 +191,7 @@
 		B71C1E0CA097D42F4E91C515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1815A6D31F39940200DAA686 /* CoreLocation.framework */,
 				18EB1EE71F30AAAA00D08D2C /* MapKit.framework */,
 				5CC12ECFA490087258EA5785 /* Pods_Matsuyoi.framework */,
 				A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */,
@@ -312,8 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */,
-				188418B81F2C3A8E00728BD9 /* Assets.xcassets in Resources */,
 				18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */,
+				188FB4111F447AD000C4A080 /* Assets.xcassets in Resources */,
 				188418B31F2C3A8E00728BD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,13 +497,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */,
+				188FB40C1F440B2200C4A080 /* SettingsViewController.swift in Sources */,
 				188418B61F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld in Sources */,
 				188418DF1F2C430900728BD9 /* CustomKolodaView.swift in Sources */,
-				18FC32691F2F29D0008B891D /* SettingViewController.swift in Sources */,
 				188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */,
+				1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */,
+				188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */,
 				188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */,
 				18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */,
 				18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */,
+				18817CF41F319B420047353F /* LoginViewController.swift in Sources */,
+				188FB4141F4483CA00C4A080 /* CustomCells.swift in Sources */,
+				188FB4161F44876700C4A080 /* LocationSettingViewController.swift in Sources */,
 				18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,9 +666,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNH48U726;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Life-Cloud.Matsuyoi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.Matsuyoi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -657,9 +681,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RHNH48U726;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Life-Cloud.Matsuyoi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.Matsuyoi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

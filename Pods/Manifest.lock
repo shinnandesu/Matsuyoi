@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (4.5.0)
+  - Eureka (3.1.0)
+  - FloatRatingView (2.0)
+  - Koloda (4.1):
+    - pop (~> 1.0)
+  - KRActivityIndicatorView (2.0.2)
+  - KRProgressHUD (3.0.0):
+    - KRActivityIndicatorView (~> 2.0.2)
+  - pop (1.0.10)
+  - PopupDialog (0.5.4)
+  - Realm (2.9.0):
+    - Realm/Headers (= 2.9.0)
+  - Realm/Headers (2.9.0)
+  - RealmSwift (2.9.0):
+    - Realm (= 2.9.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - StatusProvider (1.2.4)
+  - SwiftyJSON (3.1.4)
+  - TabPageViewController (0.2.7)
+  - ZKCarousel (0.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Eureka
+  - FloatRatingView
+  - Koloda
+  - KRProgressHUD
+  - PopupDialog
+  - RealmSwift
+  - SDWebImage
+  - StatusProvider
+  - SwiftyJSON
+  - TabPageViewController
+  - ZKCarousel
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Eureka: d6725c38d0dcdceaa331d1468f75e76315715ae0
+  FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
+  Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
+  KRActivityIndicatorView: 2a9d5442ba8da6274db3afdf46aeaef7cf6dd8ad
+  KRProgressHUD: 14f9fad06080bdb1e59569104a8eda654c83e813
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  RealmSwift: 16ad2c187042c4934f49750375582fe508627dcb
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  StatusProvider: ba18d6d93c1d2bafec88dc17d8e2fe07df6cfbe8
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+  ZKCarousel: 36143c4667c89c70c89ccda9e1e01af2fcbb5a9e
+
+PODFILE CHECKSUM: aef109904f1e65ea57a72ee257557a4566ea4232
+
+COCOAPODS: 1.2.1

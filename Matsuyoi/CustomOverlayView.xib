@@ -16,22 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JuT-bE-3F0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="309"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-to-avM">
+                    <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="JuT-bE-3F0" secondAttribute="height" multiplier="125:103" id="o8c-wC-7pm"/>
+                        <constraint firstAttribute="width" secondItem="WbX-to-avM" secondAttribute="height" multiplier="1:1" id="c89-Eg-04X"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JuT-bE-3F0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IsM-fy-euJ"/>
-                <constraint firstItem="JuT-bE-3F0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N9V-nY-tod"/>
-                <constraint firstAttribute="trailing" secondItem="JuT-bE-3F0" secondAttribute="trailing" id="Zf5-Of-72O"/>
-                <constraint firstItem="JuT-bE-3F0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pni-J0-lv4"/>
+                <constraint firstItem="WbX-to-avM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DIW-D3-9OB"/>
+                <constraint firstItem="WbX-to-avM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rhl-GA-ciZ"/>
             </constraints>
             <connections>
-                <outlet property="overlayImageView" destination="JuT-bE-3F0" id="upF-0P-Zcy"/>
+                <outlet property="overlayImageView" destination="WbX-to-avM" id="gFB-mU-JgR"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>

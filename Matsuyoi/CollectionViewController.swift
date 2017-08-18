@@ -9,8 +9,12 @@
 
 import UIKit
 import RealmSwift
+import KRProgressHUD
+import PopupDialog
+import StatusProvider
 
-class CollectionViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+
+class CollectionViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,StatusController{
     
     @IBOutlet weak var collection: UICollectionView!
     var photos:[NSURL] = []
@@ -27,10 +31,22 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         collection.delegate = self
         collection.dataSource = self
         
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+
         let realm = try! Realm()
-        collection.refreshControl = refresh
+        if #available(iOS 10.0, *) {
+            collection.refreshControl = refresh
+        } else {
+            // Fallback on earlier versions
+        }
         refresh.addTarget(self, action: #selector(CollectionViewController.getData), for: UIControlEvents.valueChanged)
         getData()
+    }
+    override public func viewDidAppear(_ animated: Bool) {
+        self.getData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailSegue" {
@@ -39,31 +55,75 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         }
     }
 
+    //全データ削除
+    @IBAction func tappedTrash(_ sender: Any) {
+        showImageDialog()
+    }
+    //削除するかのアラート
+    func showImageDialog(animated: Bool = true) {
+        let realm = try! Realm()
+        let delete = realm.objects(SpotList.self)
+        // Prepare the popup
+        let title = "Delete All Data"
+        let message = "お気に入りにスワイプしたスポットのデータが全て消去されますがよろしいですか？"
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            self.getData()
+        }
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "CANCEL") {
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "OK") {
+            delete.forEach { data in
+                try! realm.write() {
+                    realm.delete(data)
+                }
+            }
+        }
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: animated, completion: nil)
+    }
+        
+    //Realmからデータ取得
     func getData(){
         let realm = try! Realm()
-        var objs = realm.objects(SpotList.self)
-        reversObjs = objs.reversed()
+        let objs = realm.objects(SpotList.self)
+        reversObjs = objs.reversed()    //オブジェクトを降順にする
         self.photos = []
         self.names = []
-        for myList in reversObjs {
-            let url = myList.url
-            let name = myList.name
-            let photoUrl: NSURL = NSURL(string:url!)!  //urlの文字列を与えてNSURLのインスタンスを作成
-            photos.append(photoUrl)
-            names.append(name!)
-            dump(name)
+        if reversObjs == []{            
+            let status = Status(title: "No Data", description: "データがありません",  image: UIImage(named: "matsuyoi")) {
+                self.hideStatus()
+            }
+            show(status: status) //nodataの表示
+        }else if reversObjs != []{
+            hideStatus()    //nodata画面閉じる
+            for myList in reversObjs {
+                let url = myList.url
+                let name = myList.name
+                let photoUrl: NSURL = NSURL(string:url!)!  //urlの文字列を与えてNSURLのインスタンスを作成
+                photos.append(photoUrl)
+                names.append(name!)
+            }
         }
         self.collection.reloadData()
         self.refresh.endRefreshing()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize:CGFloat = self.view.frame.size.width/2-2
+        let cellSize:CGFloat = self.view.frame.size.width/2-1
         // 正方形で返すためにwidth,heightを同じにする
+        
         return CGSize(width: cellSize, height: cellSize)
     }
-
-    
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 要素数を入れる、要素以上の数字を入れると表示でエラーとなる
         return photos.count
@@ -93,6 +153,7 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedList = [reversObjs[(indexPath as NSIndexPath).row]]
         performSegue(withIdentifier: "DetailSegue", sender: nil)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,4 +161,3 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
 }
-
