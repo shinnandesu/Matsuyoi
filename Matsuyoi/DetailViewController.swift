@@ -70,6 +70,7 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         self.floatRatingView.floatRatings = true
         self.floatRatingView.halfRatings = true
         
+        //スコア
         scoreLabel.text = SelectedScore!
         let floatScore = Float(SelectedScore!)
         self.floatRatingView.rating = floatScore!

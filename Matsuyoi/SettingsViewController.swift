@@ -80,7 +80,7 @@ class SettingsViewController : FormViewController{
                 $0.options = categoryArray
                 $0.value = $0.options.first
                 }.onChange{ row in
-//                    self.userDefault.setValue(row.value, forKey: "category")
+                    self.userDefault.setValue(row.value!, forKey: "category")
                 }
             
     

@@ -16,15 +16,17 @@ import RealmSwift
 import SDWebImage
 import KRProgressHUD
 import PopupDialog
+import SwipeMenuViewController
+
 
 //カードの初期設定
-
-var numberOfCards: Int = 20
 private let frameAnimationSpringBounciness: CGFloat = 9
 private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
 
+
+//スポットのクラス
 class SpotList: Object {
     dynamic var name:String!
     dynamic var url:String?
@@ -35,14 +37,22 @@ class SpotList: Object {
     dynamic var lng:String!
 }
 
-class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerTransitioningDelegate,CLLocationManagerDelegate{
+
+class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewControllerTransitioningDelegate,CLLocationManagerDelegate{
     
+    @IBOutlet weak var swipeMenuView: SwipeMenuView!
+    
+    var datas: [String] = ["All","Shop", "Ramen", "Cafe", "居酒屋", "night", "Riolu", "Araquanid"]
+    var options = SwipeMenuViewOptions()
+    var dataCount: Int = 8
+
     //取得したスポットの配列
     var spotLists:[SpotList] = []
     //選択したスポットの配列
     var selectedList:[SpotList] = []
     // タブのタイトルを設定
     
+    //パラメータのデフォルト値
     var Latitude:Double = 0.0
     var Longitude:Double = 0.0
     var Distance:Int = 0
@@ -51,6 +61,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     
 
     let userDefaults = UserDefaults.standard
+    //リフレッシュするボタン
     let button = UIButton()
     
     @IBOutlet weak var likeButton: UIButton!
@@ -58,7 +69,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     @IBOutlet weak var floatRatingView: FloatRatingView! //レビュー星
     @IBOutlet weak var kolodaView: CustomKolodaView! //tinderView
     @IBOutlet weak var kolodaLabel: UILabel! //名前
-    @IBOutlet weak var revertButton: UIButton!
+    @IBOutlet weak var revertButton: UIButton!//戻るボタン
     @IBOutlet weak var score: UILabel! //隠れスポット度
 
     var locationManager: CLLocationManager!
@@ -104,9 +115,19 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
+        //swipeMenuViewの設定
+        swipeMenuView.dataSource = self
+        swipeMenuView.delegate = self as! SwipeMenuViewDelegate
+        
+        let options: SwipeMenuViewOptions = .init()
+        
+        swipeMenuView.reloadData(options: options)
+        
+        
         checkNetwork()
 
     }
+    
     //Saveされたら再読み込み
     override func viewWillAppear(_ animated: Bool) {
         
@@ -117,13 +138,16 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         }
         self.userDefaults.set(false, forKey: "count")
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     //セグエ設定
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
+        _ = segue.destination
         
         //セグエの設定
         if segue.identifier == "nextSegue" {
-            var detailViewController = segue.destination as! DetailViewController
+            let detailViewController = segue.destination as! DetailViewController
             detailViewController.SelectedList = selectedList
         }
     }
@@ -139,6 +163,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     
     //ネット状況チェック
     func checkNetwork(){
+        //一旦ボタン隠す
         self.floatRatingView.isHidden = true
         self.likeButton.isHidden = true
         self.unlikeButton.isHidden = true
@@ -208,8 +233,9 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         Longitude = userDefaults.double(forKey: "lng")
         Distance = userDefaults.integer(forKey: "distance")
         Level = userDefaults.float(forKey: "level")
+//        Category = userDefaults.string(forKey: "category")!
 
-
+        print(Category)
         print("get Image")
         self.spotLists = []
         let parameters = [
@@ -217,7 +243,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
             "lng": Longitude,
             "distance": Distance,
             "level":Level,
-            "category":Category,
+//            "category":Category,
             ] as [String : Any]
     
         Alamofire.request("https://life-cloud.ht.sfc.keio.ac.jp/~shinsan/SpoTrip/json.php", method:.post,parameters: parameters)
@@ -299,7 +325,9 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
             revertButton.isEnabled = false
         }
     }
+    
 }
+
 
 //MARK: KolodaViewDelegate
 extension ViewController: KolodaViewDelegate {
@@ -396,7 +424,6 @@ extension ViewController: KolodaViewDataSource {
     
     
     func koloda(_ koloda: KolodaView, didShowCardAt index: Int) {
-        //        let label = labels[Int(index)]
         if self.spotLists.count != 0 {
             if let spotName  = self.spotLists[Int(index)].name{
                 if let spotScore = self.spotLists[Int(index)].score{

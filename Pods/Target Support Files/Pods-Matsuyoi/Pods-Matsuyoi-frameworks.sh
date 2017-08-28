@@ -91,6 +91,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FlexiblePageControl/FlexiblePageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FloatRatingView/FloatRatingView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRActivityIndicatorView/KRActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRProgressHUD/KRProgressHUD.framework"
@@ -101,13 +102,16 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/StatusProvider/StatusProvider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwipeMenuViewController/SwipeMenuViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TabPageViewController/TabPageViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ZKCarousel/ZKCarousel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/paper-onboarding/paper_onboarding.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FlexiblePageControl/FlexiblePageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FloatRatingView/FloatRatingView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRActivityIndicatorView/KRActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRProgressHUD/KRProgressHUD.framework"
@@ -118,8 +122,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/StatusProvider/StatusProvider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwipeMenuViewController/SwipeMenuViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TabPageViewController/TabPageViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ZKCarousel/ZKCarousel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/paper-onboarding/paper_onboarding.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

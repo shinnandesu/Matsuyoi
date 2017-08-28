@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FlexiblePageControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FloatRatingView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -79,12 +84,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwipeMenuViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TabPageViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>ZKCarousel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>paper-onboarding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -97,6 +112,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1D71920658B70EAA9ABC8F16882A1C3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>20151774CE2F5FA6B8126D4F5ED1C5FE</key>
 		<dict>
 			<key>primary</key>
@@ -107,17 +127,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>291C542AE7B1948979727906132B8BF9</key>
+		<key>469850B428EBA127ABB3B08765864D85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F4AC221D7CAB44DB300F64B48594D30</key>
+		<key>5308782E9BB87B1129E858C2C1B3F96A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A44C6AD0150DED2B6E1EE4F6D944A97</key>
+		<key>6033DAC6A4394DA60ECAC9F3271331FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,12 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>695AB29C57BB69972A501387840D2709</key>
+		<key>738B2050D3EE6CEF2F8FC5020EAB44A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B66E9F7929AA786468386885E25F0B3</key>
+		<key>7DD1E916DF28A5D5B4CD8C29CEE519A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,22 +177,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4C5DD972D1E11B4E72E82961497DA81</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A6E8F0AEE6D1E6A2BB0212CB8F1B9C87</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1E784EDAA10C85BC61BA1AD28131DE1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B376CCA9CA7A6478E50B37CDCA9D3D2E</key>
+		<key>AB6BC7A0FFE80D46333A646D4ABDEF71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -183,6 +188,31 @@
 			<true/>
 		</dict>
 		<key>E10250FECAFAA00B2CAAF40A7178BE26</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E86DE4BAF9BA454E688F5E4A55227541</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F213A221CB3EDE4FB3669C3DE13308E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6342CD777BAC505BD920F1DCFFE9BF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA0B261053CC4F091B535CE7593CDB1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC0DE2DB4266B16BD3ECA829409795F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

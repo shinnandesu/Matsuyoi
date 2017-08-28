@@ -19,7 +19,9 @@ target 'Matsuyoi' do
   pod "StatusProvider"
   pod "TabPageViewController"
   pod "Eureka"
-
+  pod "paper-onboarding"
+  pod "FlexiblePageControl"
+  pod "SwipeMenuViewController"
   
   target 'MatsuyoiTests' do
     inherit! :search_paths
