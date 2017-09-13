@@ -54,12 +54,12 @@ extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.first
-        latitude = (location?.coordinate.latitude)!
-        longitude = (location?.coordinate.longitude)!
+//        latitude = (location?.coordinate.latitude)!
+//        longitude = (location?.coordinate.longitude)!
         userDefaults.set(latitude, forKey: "lat")
         userDefaults.set(longitude, forKey: "lng")
         userDefaults.set(5.0, forKey: "distance")
-        userDefaults.set(3.0, forKey: "level")
+        userDefaults.set(3.5, forKey: "level")
 
         performSegue(withIdentifier: "toTab", sender: nil)
     }

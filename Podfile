@@ -21,7 +21,9 @@ target 'Matsuyoi' do
   pod "Eureka"
   pod "paper-onboarding"
   pod "FlexiblePageControl"
-  pod "SwipeMenuViewController"
+  pod "TZSegmentedControl"
+  pod "FAPanels"
+
   
   target 'MatsuyoiTests' do
     inherit! :search_paths

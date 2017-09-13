@@ -20,6 +20,8 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
     var photos:[NSURL] = []
     var names:[String] = []
     var selectedList:[SpotList] = []
+    var selectedCount = 0
+    var selectedType = 2
     var reversObjs:[SpotList] = []
 
     let refresh = UIRefreshControl()
@@ -36,10 +38,19 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         collection.dataSource = self
         
         //ナビゲーションバーの設定
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
+//        //バー背景色
+//        self.navigationController?.navigationBar.barTintColor = UIColor.black
+//        
+//        //バーアイテムカラー
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        
+//        //ナビゲーションタイトル文字列の変更
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
+
+
         //更新画面
         if #available(iOS 10.0, *) {
             collection.refreshControl = refresh
@@ -62,6 +73,8 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         if segue.identifier == "DetailSegue" {
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.SelectedList = selectedList
+            detailViewController.SelectedType = selectedType
+            detailViewController.SelectedCount = selectedCount
         }
     }
     
@@ -73,7 +86,7 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         self.names = []
         
         if reversObjs == []{
-            let status = Status(title: "No Data", description: "データがありません",  image: UIImage(named: "matsuyoi")) {
+            let status = Status(title: "No Spot", description: "スワイプされたスポットがありません",  image: UIImage(named: "matsuyoi")) {
                 self.hideStatus()
             }
             show(status: status) //nodataの表示
@@ -126,6 +139,7 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedList = [reversObjs[(indexPath as NSIndexPath).row]]
+        selectedCount = (indexPath as NSIndexPath).row
         performSegue(withIdentifier: "DetailSegue", sender: nil)
         
     }

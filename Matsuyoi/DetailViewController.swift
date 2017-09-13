@@ -15,6 +15,8 @@ import KRProgressHUD
 import FloatRatingView
 import CoreLocation
 import Alamofire
+import RealmSwift
+import PopupDialog
 
 class DetailViewController: UIViewController,FloatRatingViewDelegate{
 
@@ -29,6 +31,10 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
     var SelectedCategory:String? = nil
     var SelectedLat:String? = nil
     var SelectedLng:String? = nil
+    var SelectedType:Int? = nil
+    var SelectedCount:Int? = nil
+    var reversObjs:[SpotList] = []
+
     var currentLat:Double = 0.0
     var currentLng:Double  = 0.0
     var doubleLat:Double = 0.0
@@ -40,6 +46,7 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var trashButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +54,15 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
 //        KRProgressHUD.show(withMessage: "Loading...") {
 //            print("セル選択")
 //        }
-        //受け取りデータ
-        currentLat = userDefaults.double(forKey: "lat")
-        currentLng = userDefaults.double(forKey: "lng")
+        
+//        if(SelectedType == 1){
+            trashButton.isEnabled = false
+            self.trashButton.tintColor = UIColor.clear
+//        }
+        
+               //受け取りデータ
+        currentLat = userDefaults.double(forKey: "currentLat")
+        currentLng = userDefaults.double(forKey: "currentLng")
         SelectedUrl = SelectedList[0].url
         SelectedInfo = SelectedList[0].info
         SelectedName = SelectedList[0].name
@@ -82,7 +95,8 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         let currentLocation: CLLocation = CLLocation(latitude: currentLat, longitude: currentLng)
         let goalLocation: CLLocation = CLLocation(latitude: doubleLat, longitude: doubleLng)
         let distance = goalLocation.distance(from: currentLocation)
-        distanceLabel.text = String(Int(distance)) + "m"
+        let kilometer = Int((distance/1000000))
+        distanceLabel.text = String(kilometer) + "km"
 
         //MapKit設定
         let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(doubleLat), CLLocationDegrees(doubleLng))
@@ -99,13 +113,47 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         }
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //ナビゲーションバー透過
+        self.navigationController?.isToolbarHidden = true
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
     }
 
+//    @IBAction func tapTrash(_ sender: Any) {
+//        
+//        let realm = try! Realm()
+//        let objs = realm.objects(SpotList.self)
+//        reversObjs = objs.reversed()    //オブジェクトを降順にする
+//        // Prepare the popup
+//        let title = "Delete This Data"
+//        let message = "お気に入りから削除しますか？"
+//        
+//        // Create the dialog
+//        let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+//        }
+//        
+//        // Create first button
+//        let buttonOne = CancelButton(title: "CANCEL") {
+//        }
+//        
+//        // Create second button
+//        let buttonTwo = DefaultButton(title: "OK") {
+//            self.navigationController?.popViewController(animated: true)
+//        }
+//        // Add buttons to dialog
+//        popup.addButtons([buttonOne, buttonTwo])
+//        
+//        // Present dialog
+//        self.present(popup, animated: true, completion: nil)
+//    }
     
     @IBAction func openInfo(_ sender: Any) {
         let vc = SFSafariViewController(url: NSURL(string: SelectedInfo!)! as URL)
@@ -117,7 +165,6 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         let alertSheet = UIAlertController(title: "経路", message: "アプリを開きます", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         // 自分の選択肢を生成
-        
         let action2 = UIAlertAction(title: "Google Maps", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) in
             print("google")
@@ -145,7 +192,6 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         currentLng = (location?.coordinate.longitude)!
         userDefaults.set(currentLat, forKey: "lat")
         userDefaults.set(currentLng, forKey: "lng")
-        print("latitude: \(currentLat)\nlongitude: \(currentLng)")
     }
 
     func checkNetwork(){

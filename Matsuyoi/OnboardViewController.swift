@@ -19,7 +19,7 @@ class OnboardViewController: UIViewController {
         skipButton.isHidden = true
         
         // Uncomment next line to setup `PaperOnboarding` from code
-        // setupPaperOnboardingView()x
+        // setupPaperOnboardingView()
     }
     
     private func setupPaperOnboardingView() {

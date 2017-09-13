@@ -16,8 +16,7 @@ import RealmSwift
 import SDWebImage
 import KRProgressHUD
 import PopupDialog
-import SwipeMenuViewController
-
+import TZSegmentedControl
 
 //カードの初期設定
 private let frameAnimationSpringBounciness: CGFloat = 9
@@ -37,15 +36,8 @@ class SpotList: Object {
     dynamic var lng:String!
 }
 
-
-class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewControllerTransitioningDelegate,CLLocationManagerDelegate{
+class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerTransitioningDelegate,CLLocationManagerDelegate{
     
-    @IBOutlet weak var swipeMenuView: SwipeMenuView!
-    
-    var datas: [String] = ["All","Shop", "Ramen", "Cafe", "居酒屋", "night", "Riolu", "Araquanid"]
-    var options = SwipeMenuViewOptions()
-    var dataCount: Int = 8
-
     //取得したスポットの配列
     var spotLists:[SpotList] = []
     //選択したスポットの配列
@@ -54,7 +46,10 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
     
     //パラメータのデフォルト値
     var Latitude:Double = 0.0
+    var currentLatitude:Double = 0.0
     var Longitude:Double = 0.0
+    var currentLongitude:Double = 0.0
+    var selectedType = 1
     var Distance:Int = 0
     var Level:Float = 0.0
     var Category:String = ""
@@ -71,21 +66,21 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
     @IBOutlet weak var kolodaLabel: UILabel! //名前
     @IBOutlet weak var revertButton: UIButton!//戻るボタン
     @IBOutlet weak var score: UILabel! //隠れスポット度
-
+    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
+    
+    
     var locationManager: CLLocationManager!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //タブバーの色指定
-        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.darkGray
-        self.tabBarController?.tabBar.tintColor = UIColor.white
-        //ナビゲーションバー透過
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-               
+        
+        
+        locationButton.setBackgroundImage(#imageLiteral(resourceName: "location"), for: .selected)
+        
+
+        
         //オフライン時の再読み込みボタン
         button.setImage(#imageLiteral(resourceName: "refresh"), for:UIControlState())
         button.addTarget(self, action: #selector(self.buttonEvent(sender:)), for: .touchUpInside)
@@ -94,6 +89,10 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
         self.view.addSubview(button)
         button.isHidden = true
     
+        
+        locationManager = CLLocationManager() // インスタンスの生成
+        locationManager.delegate = self as! CLLocationManagerDelegate // CLLocationManagerDelegateプロトコルを実装するクラスを指定する
+
 
         //レビュー星の設定
         self.floatRatingView.emptyImage = UIImage(named: "StarEmpty")
@@ -115,21 +114,53 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
-        //swipeMenuViewの設定
-        swipeMenuView.dataSource = self
-        swipeMenuView.delegate = self as! SwipeMenuViewDelegate
-        
-        let options: SwipeMenuViewOptions = .init()
-        
-        swipeMenuView.reloadData(options: options)
-        
+//        //カテゴリ検索の欄
+//        let titleCont = TZSegmentedControl(sectionTitles: ["All","Food", "Night", "Ramen", "etc.","Japanese","Korean","All","Food", "Night", "Ramen", "etc.","Japanese","Korean" ])
+//        titleCont.frame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: 50)
+//        titleCont.indicatorWidthPercent = 0.0
+//        titleCont.backgroundColor = UIColor.white
+//        let whitishColor = UIColor(white: 0.75, alpha: 1.0)
+//        titleCont.borderColor = UIColor.lightGray
+//        titleCont.borderWidth = 0.5
+//        titleCont.segmentWidthStyle = .dynamic
+//        titleCont.verticalDividerEnabled = true
+//        titleCont.verticalDividerWidth = 0.5
+//        titleCont.verticalDividerColor = UIColor.lightGray
+//        titleCont.selectionStyle = .box
+//        titleCont.selectionIndicatorLocation = .down
+//        titleCont.selectionIndicatorColor = UIColor.darkGray
+//        titleCont.selectionIndicatorHeight = 2.0
+//        titleCont.borderType = .top
+//        titleCont.edgeInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//        titleCont.selectedTitleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+//        titleCont.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.darkGray,
+//                                         NSFontAttributeName:UIFont(name: "Tahoma", size: 10.0) ?? UIFont.systemFont(ofSize: 13)]
+//        self.view.addSubview(titleCont)
+//        
+//        titleCont.indexChangeBlock = { (index) in
+//            self.userDefaults.set(titleCont.sectionTitles[index], forKey: "category")
+//            self.Category = self.userDefaults.string(forKey: "category")!
+//            print(self.Category)
+//            self.checkNetwork()
+//            
+//        }
+
         
         checkNetwork()
 
     }
-    
     //Saveされたら再読み込み
     override func viewWillAppear(_ animated: Bool) {
+        
+        //ナビゲーションバー透過
+        self.navigationController?.isToolbarHidden = true
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+
         
         let count = userDefaults.bool(forKey: "count")
         
@@ -137,9 +168,6 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
             checkNetwork()
         }
         self.userDefaults.set(false, forKey: "count")
-    }
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     //セグエ設定
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,17 +177,18 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
         if segue.identifier == "nextSegue" {
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.SelectedList = selectedList
+            detailViewController.SelectedType = selectedType
         }
     }
-//       //位置情報更新
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations.first
-//        Latitude = (location?.coordinate.latitude)!
-//        Longitude = (location?.coordinate.longitude)!
-//        userDefaults.set(Latitude, forKey: "lat")
-//        userDefaults.set(Longitude, forKey: "lng")
-//        print("latitude: \(Latitude)\nlongitude: \(Longitude)")
-//    }
+       //位置情報更新
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        currentLatitude = (location?.coordinate.latitude)!
+        currentLongitude = (location?.coordinate.longitude)!
+        self.userDefaults.set(self.currentLatitude, forKey: "currentLat")
+        self.userDefaults.set(self.currentLongitude, forKey: "currentLng")
+    }
+    
     
     //ネット状況チェック
     func checkNetwork(){
@@ -171,6 +200,8 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
         self.kolodaView.isHidden = true
         self.kolodaLabel.isHidden = true
         self.score.isHidden = true
+        self.settingButton.isHidden = true
+        self.locationButton.isHidden = true
 
         let net = NetworkReachabilityManager()
         net?.startListening()
@@ -196,6 +227,8 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
             kolodaView.isHidden = true
             kolodaLabel.isHidden = true
             score.isHidden = true
+            settingButton.isHidden = true
+            locationButton.isHidden = true
 
             showImageDialog(Title:"No Connection",Message:"インターネットに接続されていません")
         }
@@ -257,7 +290,26 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
 //                }
                 let json = JSON(object)
                 if (json == []){
-                    self.showImageDialog(Title:"No Data",Message:"検索範囲を変更してください")
+                    // Prepare the popup
+                    let title = "No Data"
+                    let message = "検索範囲を変更してください"
+                    
+                    // Create the dialog
+                    let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+                    }
+                    
+                    // Create first button
+                    let buttonOne = DefaultButton(title: "設定") {
+                        self.performSegue(withIdentifier: "toSetting",sender: nil)
+                        self.button.isHidden = false
+                    }
+                
+                    // Add buttons to dialog
+                    popup.addButtons([buttonOne])
+                    
+                    // Present dialog
+                    self.present(popup, animated: true, completion: nil)
+
                 }else{
                     self.revertButton.isEnabled = false
                     self.floatRatingView.isHidden = false
@@ -267,7 +319,10 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
                     self.kolodaView.isHidden = false
                     self.kolodaLabel.isHidden = false
                     self.score.isHidden = false
+                    self.settingButton.isHidden = false
+                    self.locationButton.isHidden = false
                     self.button.isHidden = true
+               
                     
                     for (_, subJson):(String, JSON) in json {
                         let spotList:SpotList = SpotList()
@@ -325,9 +380,46 @@ class ViewController:SwipeMenuViewController, FloatRatingViewDelegate,UIViewCont
             revertButton.isEnabled = false
         }
     }
-    
-}
+    @IBAction func locationTapped(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        if(currentLatitude>35.58 && 35.74>currentLatitude && currentLongitude>139.66 && 139.80>currentLongitude){
+            
+            
+            // Create the dialog
+            let popup = PopupDialog(title:"現在地から検索", message: "検索位置を現在地にしてよろしいですか？", buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            }
+            
+            // Create first button
+            let buttonOne = CancelButton(title: "CANCEL") {
+            }
+            
+            // Create second button
+            let buttonTwo = DefaultButton(title: "OK") {
+                self.userDefaults.set(self.currentLatitude, forKey: "lat")
+                self.userDefaults.set(self.currentLongitude, forKey: "lng")
+                self.checkNetwork()
+            }
+            // Add buttons to dialog
+            popup.addButtons([buttonOne, buttonTwo])
+            // Present dialog
+            self.present(popup, animated: true, completion: nil)
+        }else{
+            // Create the dialog
+            let popup = PopupDialog(title:"東京にいません", message: "現在地機能は東京のみ使用可能です", buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            }
+            // Create first button
+            let buttonOne = CancelButton(title: "OK") {
+            }
+            // Add buttons to dialog
+            popup.addButtons([buttonOne])
+            // Present dialog
+            self.present(popup, animated: true, completion: nil)
+        }
+    }
 
+}
 
 //MARK: KolodaViewDelegate
 extension ViewController: KolodaViewDelegate {
@@ -341,6 +433,8 @@ extension ViewController: KolodaViewDelegate {
         self.kolodaView.isHidden = true
         self.kolodaLabel.isHidden = true
         self.score.isHidden = true
+        self.settingButton.isHidden = true
+        self.locationButton.isHidden = true
         self.button.isHidden = false
         self.kolodaView.resetCurrentCardIndex()
 
@@ -359,8 +453,11 @@ extension ViewController: KolodaViewDelegate {
         let buttonTwo = DefaultButton(title: "再読み込み") {
             self.checkNetwork()
         }
+        let buttonThree = DefaultButton(title: "設定変更"){
+            self.performSegue(withIdentifier: "toSetting",sender: nil)
+        }
         // Add buttons to dialog
-        popup.addButtons([buttonOne, buttonTwo])
+        popup.addButtons([buttonOne, buttonTwo,buttonThree])
         
         // Present dialog
         self.present(popup, animated: true, completion: nil)
@@ -415,10 +512,10 @@ extension ViewController: KolodaViewDataSource {
             if var image = self.spotLists[Int(index)].url{
                 imageView.sd_setImage(with: NSURL(string: image) as URL!)
                 imageView.contentMode = UIViewContentMode.scaleAspectFit
-                imageView.layer.borderColor = UIColor.red.cgColor
                 self.view.addSubview(imageView)
             }
         }
+       
         return imageView
     }
     
@@ -450,6 +547,5 @@ extension ViewController: KolodaViewDataSource {
     }
 
 }
-
 
 

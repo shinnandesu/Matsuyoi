@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1D71920658B70EAA9ABC8F16882A1C3B'
-               BlueprintName = 'SwipeMenuViewController'
+               BlueprintIdentifier = '4845B29A72465E24301B10094CCBB8D1'
+               BlueprintName = 'TZSegmentedControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwipeMenuViewController.framework'>
+               BuildableName = 'TZSegmentedControl.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

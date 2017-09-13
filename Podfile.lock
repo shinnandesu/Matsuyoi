@@ -21,8 +21,8 @@ PODS:
   - SDWebImage/Core (4.1.0)
   - StatusProvider (1.2.4)
   - SwiftyJSON (3.1.4)
-  - SwipeMenuViewController (1.1.2)
   - TabPageViewController (0.2.7)
+  - TZSegmentedControl (0.2.3)
   - ZKCarousel (0.1.0)
 
 DEPENDENCIES:
@@ -38,8 +38,8 @@ DEPENDENCIES:
   - SDWebImage
   - StatusProvider
   - SwiftyJSON
-  - SwipeMenuViewController
   - TabPageViewController
+  - TZSegmentedControl
   - ZKCarousel
 
 SPEC CHECKSUMS:
@@ -58,10 +58,10 @@ SPEC CHECKSUMS:
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   StatusProvider: ba18d6d93c1d2bafec88dc17d8e2fe07df6cfbe8
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwipeMenuViewController: 9995a2e58bbf60bcd928505250f9136323bfaffa
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+  TZSegmentedControl: c71a023749aedb5e7ec9a991f5ff167650dfc80f
   ZKCarousel: 36143c4667c89c70c89ccda9e1e01af2fcbb5a9e
 
-PODFILE CHECKSUM: c3608f77e17ad815d8025f3d50dd41416709c6e2
+PODFILE CHECKSUM: eb8c2bbffc209b6c08d8a456ace8e1e51227e25e
 
 COCOAPODS: 1.2.1

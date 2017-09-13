@@ -5,7 +5,7 @@
 //  Created by shinkatayama on 2017/08/16.
 //  Copyright © 2017年 shinkatayama. All rights reserved.
 //
-
+//
 import Foundation
 import UIKit
 import MapKit

@@ -84,7 +84,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwipeMenuViewController.xcscheme</key>
+		<key>TZSegmentedControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -112,7 +112,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D71920658B70EAA9ABC8F16882A1C3B</key>
+		<key>006D031575574B3EB2C1295B104CEAFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,22 +122,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2131B4805B462676ECAA4E50FAF59CDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>237FEA0E87C1759D131C97F7140DD11D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2725F51B417E335F3AC7136566611274</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>28B2FE6E2777362944225095A729892C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>469850B428EBA127ABB3B08765864D85</key>
+		<key>3BA9F1A8E51F3479472FE3F8C3D5229F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5308782E9BB87B1129E858C2C1B3F96A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6033DAC6A4394DA60ECAC9F3271331FA</key>
+		<key>4845B29A72465E24301B10094CCBB8D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,11 +167,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DD1E916DF28A5D5B4CD8C29CEE519A5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
@@ -177,7 +182,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB6BC7A0FFE80D46333A646D4ABDEF71</key>
+		<key>A811EE3AC12664B28432060F3BA97169</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA0C347A7F85C209693A3855A4583145</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -187,32 +197,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DD4766F276925E9E55815BFD3054F73D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E10250FECAFAA00B2CAAF40A7178BE26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E86DE4BAF9BA454E688F5E4A55227541</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F213A221CB3EDE4FB3669C3DE13308E1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F6342CD777BAC505BD920F1DCFFE9BF9</key>
+		<key>E1756CA69289E14C4771D300E10E017A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>FA0B261053CC4F091B535CE7593CDB1D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC0DE2DB4266B16BD3ECA829409795F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

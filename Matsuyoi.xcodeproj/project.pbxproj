@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1815A6D41F39940200DAA686 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815A6D31F39940200DAA686 /* CoreLocation.framework */; };
 		1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */; };
-		184112FE1F540D9B00D1DCCF /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184112FD1F540D9B00D1DCCF /* ContentViewController.swift */; };
-		184113001F540E3B00D1DCCF /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184112FF1F540E3B00D1DCCF /* UIViewExtention.swift */; };
 		18817CF41F319B420047353F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18817CF31F319B420047353F /* LoginViewController.swift */; };
 		188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */; };
 		188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AF1F2C3A8E00728BD9 /* ViewController.swift */; };
@@ -23,13 +21,13 @@
 		188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */; };
 		188FB40C1F440B2200C4A080 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40B1F440B2200C4A080 /* SettingsViewController.swift */; };
 		188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40E1F4426E000C4A080 /* ProfileViewController.swift */; };
-		188FB4111F447AD000C4A080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188FB4101F447AD000C4A080 /* Assets.xcassets */; };
 		188FB4141F4483CA00C4A080 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4131F4483CA00C4A080 /* CustomCells.swift */; };
 		188FB4161F44876700C4A080 /* LocationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4151F44876700C4A080 /* LocationSettingViewController.swift */; };
 		18A4A6F31F46B1650089EF0D /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */; };
 		18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */; };
 		18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */; };
 		18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BCED911F30555D00E2972C /* CustomOverlayView.xib */; };
+		18C053E01F5E842D00C3BAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */; };
 		18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB1EE71F30AAAA00D08D2C /* MapKit.framework */; };
 		18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */; };
 		1B2078AA1C31B63AAF77344C /* Pods_MatsuyoiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */; };
@@ -57,8 +55,6 @@
 /* Begin PBXFileReference section */
 		1815A6D31F39940200DAA686 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		184112FD1F540D9B00D1DCCF /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		184112FF1F540E3B00D1DCCF /* UIViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		18817CF31F319B420047353F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		188418AA1F2C3A8E00728BD9 /* Matsuyoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matsuyoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,13 +73,13 @@
 		188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
 		188FB40B1F440B2200C4A080 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		188FB40E1F4426E000C4A080 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		188FB4101F447AD000C4A080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		188FB4131F4483CA00C4A080 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		188FB4151F44876700C4A080 /* LocationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSettingViewController.swift; sourceTree = "<group>"; };
 		18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		18BCED911F30555D00E2972C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		18EB1EE71F30AAAA00D08D2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matsuyoi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,15 +153,13 @@
 				18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */,
 				1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */,
 				188418AF1F2C3A8E00728BD9 /* ViewController.swift */,
-				184112FF1F540E3B00D1DCCF /* UIViewExtention.swift */,
-				184112FD1F540D9B00D1DCCF /* ContentViewController.swift */,
 				18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */,
 				18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */,
 				188FB40B1F440B2200C4A080 /* SettingsViewController.swift */,
 				188FB4151F44876700C4A080 /* LocationSettingViewController.swift */,
 				188FB40E1F4426E000C4A080 /* ProfileViewController.swift */,
+				18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */,
 				188418B11F2C3A8E00728BD9 /* Main.storyboard */,
-				188FB4101F447AD000C4A080 /* Assets.xcassets */,
 				188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */,
 				188418DE1F2C430900728BD9 /* CustomKolodaView.swift */,
 				18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */,
@@ -341,7 +335,7 @@
 			files = (
 				188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */,
 				18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */,
-				188FB4111F447AD000C4A080 /* Assets.xcassets in Resources */,
+				18C053E01F5E842D00C3BAD0 /* Assets.xcassets in Resources */,
 				188418B31F2C3A8E00728BD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,7 +499,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				184112FE1F540D9B00D1DCCF /* ContentViewController.swift in Sources */,
 				188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */,
 				188FB40C1F440B2200C4A080 /* SettingsViewController.swift in Sources */,
 				188418B61F2C3A8E00728BD9 /* Matsuyoi.xcdatamodeld in Sources */,
@@ -515,7 +508,6 @@
 				1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */,
 				188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */,
 				188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */,
-				184113001F540E3B00D1DCCF /* UIViewExtention.swift in Sources */,
 				18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */,
 				18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */,
 				18817CF41F319B420047353F /* LoginViewController.swift in Sources */,

@@ -29,6 +29,7 @@ class SettingsViewController : FormViewController{
         
         // Create first button
         let buttonOne = CancelButton(title: "OK") {
+            self.navigationController?.popViewController(animated: true)
         }
         
         // Add buttons to dialog
@@ -36,21 +37,37 @@ class SettingsViewController : FormViewController{
         
         // Present dialog
         self.present(popup, animated: true, completion: nil)
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        // ① ナビゲーションバーの背景色
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        
+        // ② ナビゲーションバーのタイトルの色
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+        
+        // ③ ナビゲーションバー上のアイテムの色
+        self.navigationController?.navigationBar.tintColor = UIColor.black
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ナビゲーションバー透過
-        self.navigationController!.navigationBar.tintColor = UIColor.blue
-        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButtonItem
-        
+            
         let categoryArray = ["芸術 & 娯楽","飲食店","ナイトライフ","アウトドア＆レクリエーション","ショッピング"]
         
         form +++ Section("検索設定")
+            
+            <<< PickerInputRow<String>("カテゴリ"){
+                $0.title = "カテゴリ"
+                $0.options = categoryArray
+                $0.value = $0.options.first
+                }.onChange{ row in
+                    self.userDefault.setValue(row.value!, forKey: "category")
+            }
+
             <<< LocationRow(){
                 $0.title = "場所"
-                $0.value = CLLocation(latitude: CLLocationDegrees(self.userDefault.float(forKey: "lat")), longitude: CLLocationDegrees(self.userDefault.float(forKey: "lng")))
+                $0.value = CLLocation(latitude: CLLocationDegrees(self.userDefault.double(forKey: "lat")), longitude: CLLocationDegrees(self.userDefault.double(forKey: "lng")))
                 }.onChange{ row in
                     let location = row.value
                     let lati = location?.coordinate.latitude
@@ -74,13 +91,6 @@ class SettingsViewController : FormViewController{
                 $0.value = self.userDefault.float(forKey: "level")
                 }.onChange{ row in
                     self.userDefault.setValue(row.value, forKey: "level")
-                }
-            <<< PickerInputRow<String>("カテゴリ"){
-                $0.title = "カテゴリ"
-                $0.options = categoryArray
-                $0.value = $0.options.first
-                }.onChange{ row in
-                    self.userDefault.setValue(row.value!, forKey: "category")
                 }
             
     
