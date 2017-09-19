@@ -7,6 +7,7 @@
 //
 import CoreLocation
 import UIKit
+import KRProgressHUD
 
 class LocationViewController: UIViewController {
     
@@ -17,7 +18,6 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager = CLLocationManager() // インスタンスの生成
         locationManager.delegate = self as! CLLocationManagerDelegate // CLLocationManagerDelegateプロトコルを実装するクラスを指定する
     }
@@ -54,12 +54,18 @@ extension LocationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.first
-//        latitude = (location?.coordinate.latitude)!
-//        longitude = (location?.coordinate.longitude)!
+        let currentlatitude = (location?.coordinate.latitude)!
+        let currentlongitude = (location?.coordinate.longitude)!
+        userDefaults.set(currentlatitude, forKey: "currentlat")
+        userDefaults.set(currentlongitude, forKey: "currentlng")
         userDefaults.set(latitude, forKey: "lat")
         userDefaults.set(longitude, forKey: "lng")
-        userDefaults.set(5.0, forKey: "distance")
+        userDefaults.set(3.0, forKey: "distance")
         userDefaults.set(3.5, forKey: "level")
+        userDefaults.setValue("徒歩圏内", forKey: "distanceLabel")
+        userDefaults.setValue("飲食店", forKey: "category")
+
+
 
         performSegue(withIdentifier: "toTab", sender: nil)
     }

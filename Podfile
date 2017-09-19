@@ -22,7 +22,6 @@ target 'Matsuyoi' do
   pod "paper-onboarding"
   pod "FlexiblePageControl"
   pod "TZSegmentedControl"
-  pod "FAPanels"
 
   
   target 'MatsuyoiTests' do

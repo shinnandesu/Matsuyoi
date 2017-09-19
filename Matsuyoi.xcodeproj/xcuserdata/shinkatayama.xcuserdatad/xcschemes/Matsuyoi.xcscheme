@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "188418A91F2C3A8E00728BD9"
-               BuildableName = "Matsuyoi.app"
+               BuildableName = "MATSUYOI.app"
                BlueprintName = "Matsuyoi"
                ReferencedContainer = "container:Matsuyoi.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188418A91F2C3A8E00728BD9"
-            BuildableName = "Matsuyoi.app"
+            BuildableName = "MATSUYOI.app"
             BlueprintName = "Matsuyoi"
             ReferencedContainer = "container:Matsuyoi.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188418A91F2C3A8E00728BD9"
-            BuildableName = "Matsuyoi.app"
+            BuildableName = "MATSUYOI.app"
             BlueprintName = "Matsuyoi"
             ReferencedContainer = "container:Matsuyoi.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188418A91F2C3A8E00728BD9"
-            BuildableName = "Matsuyoi.app"
+            BuildableName = "MATSUYOI.app"
             BlueprintName = "Matsuyoi"
             ReferencedContainer = "container:Matsuyoi.xcodeproj">
          </BuildableReference>

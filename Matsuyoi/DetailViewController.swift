@@ -92,11 +92,11 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
         //距離の計算
         doubleLat = Double(SelectedLat!)!
         doubleLng = Double(SelectedLng!)!
-        let currentLocation: CLLocation = CLLocation(latitude: currentLat, longitude: currentLng)
-        let goalLocation: CLLocation = CLLocation(latitude: doubleLat, longitude: doubleLng)
-        let distance = goalLocation.distance(from: currentLocation)
-        let kilometer = Int((distance/1000000))
-        distanceLabel.text = String(kilometer) + "km"
+//        let currentLocation: CLLocation = CLLocation(latitude: currentLat, longitude: currentLng)
+//        let goalLocation: CLLocation = CLLocation(latitude: doubleLat, longitude: doubleLng)
+//        let distance = goalLocation.distance(from: currentLocation)
+//        let kilometer = Int((distance/1000000))
+//        distanceLabel.text = String(kilometer) + "km"
 
         //MapKit設定
         let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(doubleLat), CLLocationDegrees(doubleLng))

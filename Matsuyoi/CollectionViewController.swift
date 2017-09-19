@@ -64,7 +64,17 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
     }
     
     //画面切り替わったら更新
-    override public func viewDidAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
+        // ② ナビゲーションバーのタイトルの色
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        // 透明にしたナビゲーションを元に戻す処理
+        self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController!.navigationBar.shadowImage = nil
+        //バー背景色
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+
         self.getData()
     }
     
@@ -86,7 +96,7 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         self.names = []
         
         if reversObjs == []{
-            let status = Status(title: "No Spot", description: "スワイプされたスポットがありません",  image: UIImage(named: "matsuyoi")) {
+            let status = Status(title: "No Spot", description: "スワイプされたスポットがありません") {
                 self.hideStatus()
             }
             show(status: status) //nodataの表示

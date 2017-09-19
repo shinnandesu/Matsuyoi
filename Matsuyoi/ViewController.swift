@@ -53,7 +53,8 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     var Distance:Int = 0
     var Level:Float = 0.0
     var Category:String = ""
-    
+    let uuid = UIDevice.current.identifierForVendor!.uuidString
+
 
     let userDefaults = UserDefaults.standard
     //リフレッシュするボタン
@@ -75,10 +76,13 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         locationButton.setBackgroundImage(#imageLiteral(resourceName: "location"), for: .selected)
         
+        currentLatitude = userDefaults.double(forKey: "currentlat")
+        currentLongitude = userDefaults.double(forKey: "currentlng")
+        
+
 
         
         //オフライン時の再読み込みボタン
@@ -152,15 +156,27 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     //Saveされたら再読み込み
     override func viewWillAppear(_ animated: Bool) {
         
+       
+
+        
+
         //ナビゲーションバー透過
         self.navigationController?.isToolbarHidden = true
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = UIColor.white
-
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
 
+        // タイトルをセット
+        self.navigationItem.title = "MATSUYOI"
+        
+        
+        // フォント種をTime New Roman、サイズを10に指定
+        self.navigationController?.navigationBar.titleTextAttributes
+            = [NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         let count = userDefaults.bool(forKey: "count")
         
@@ -168,6 +184,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
             checkNetwork()
         }
         self.userDefaults.set(false, forKey: "count")
+
     }
     //セグエ設定
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -229,6 +246,8 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
             score.isHidden = true
             settingButton.isHidden = true
             locationButton.isHidden = true
+            self.button.isHidden = false
+
 
             showImageDialog(Title:"No Connection",Message:"インターネットに接続されていません")
         }
@@ -245,7 +264,6 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         
         // Create first button
         let buttonOne = CancelButton(title: "OK") {
-            self.button.isHidden = false
         }
         
         // Add buttons to dialog
@@ -266,17 +284,16 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         Longitude = userDefaults.double(forKey: "lng")
         Distance = userDefaults.integer(forKey: "distance")
         Level = userDefaults.float(forKey: "level")
-//        Category = userDefaults.string(forKey: "category")!
+        Category = userDefaults.string(forKey: "category")!
 
         print(Category)
-        print("get Image")
         self.spotLists = []
         let parameters = [
             "lat": Latitude,
             "lng": Longitude,
             "distance": Distance,
             "level":Level,
-//            "category":Category,
+            "category":Category,
             ] as [String : Any]
     
         Alamofire.request("https://life-cloud.ht.sfc.keio.ac.jp/~shinsan/SpoTrip/json.php", method:.post,parameters: parameters)
@@ -284,10 +301,6 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
                 guard let object = response.result.value else {
                     return
                 }
-//                KRProgressHUD.show()
-//                KRProgressHUD.show(withMessage: "Loading...") {
-//                    print("Complete handler")
-//                }
                 let json = JSON(object)
                 if (json == []){
                     // Prepare the popup
@@ -339,25 +352,24 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
                 
                 
                 self.kolodaView.reloadData()
-//                KRProgressHUD.dismiss()
         }
     }
     
-    //    //結果をサーバに送る
-    //    func sendArray(venueName:String,bool:Int) {
-    //
-    //        let Token = userDefaults.value(forKey: "Token") as! String
-    //
-    //        let parameters = [
-    //            "name": venueName,
-    //            "bool": bool,
-    //            "token": Token,
-    //        ] as [String : Any]
-    //
-    //        Alamofire.request(NSURL(string:"http://life-cloud.ht.sfc.keio.ac.jp/~shinsan/PicTrip/getResult.php")! as URL, method:.post, parameters: parameters)
-    //
-    //
-    //    }
+        //結果をサーバに送る
+        func sendArray(venueName:String,bool:Int) {
+    
+            let parameters = [
+                "name": venueName,
+                "bool": bool,
+                "lat" : currentLatitude,
+                "lon" : currentLongitude,
+                "uuid" : uuid,
+            ] as [String : Any]
+    
+            Alamofire.request(NSURL(string:"http://life-cloud.ht.sfc.keio.ac.jp/~shinsan/SpoTrip/get_result.php")! as URL, method:.post, parameters: parameters)
+    
+    
+        }
 
 
     //右スワイプさせる
@@ -407,7 +419,7 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
             self.present(popup, animated: true, completion: nil)
         }else{
             // Create the dialog
-            let popup = PopupDialog(title:"東京にいません", message: "現在地機能は東京のみ使用可能です", buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            let popup = PopupDialog(title:"東京にいません", message: "現在地機能は東京23区のみ使用可能です", buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
             }
             // Create first button
             let buttonOne = CancelButton(title: "OK") {
@@ -480,10 +492,26 @@ extension ViewController: KolodaViewDelegate {
         switch direction {
         case .left :
             if self.spotLists.count != 0{
+                if let swipenames  = self.spotLists[Int(index)].name{
+                    
+                    let boolean = 0
+                    
+                    sendArray(venueName:swipenames,bool:boolean)
+                    
+                    
+                }
             }
             revertButton.isEnabled = true
         case .right :
             if self.spotLists.count != 0{
+                if let swipenames  = self.spotLists[Int(index)].name{
+                    
+                    let boolean = 1
+                    
+                    sendArray(venueName: swipenames,bool:boolean)
+                    
+                }
+                
                 let goodList = [self.spotLists[Int(index)]]
                 try! realm.write() {
                     realm.add(goodList)

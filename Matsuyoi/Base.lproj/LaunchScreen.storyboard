@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="tWL-dD-Ct9">
-                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-LK-UFf">
+                                <rect key="frame" x="140" y="286" width="95" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="V8p-od-7og"/>
-                                    <constraint firstAttribute="height" constant="100" id="wsC-lL-8Iv"/>
+                                    <constraint firstAttribute="width" secondItem="mHY-LK-UFf" secondAttribute="height" multiplier="1:1" id="An5-dL-AiX"/>
+                                    <constraint firstAttribute="height" constant="95" id="OLp-b6-MEe"/>
+                                    <constraint firstAttribute="width" constant="95" id="owR-CS-uYO"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tWL-dD-Ct9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1TB-M8-4uq"/>
-                            <constraint firstItem="tWL-dD-Ct9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PBL-rK-L1I"/>
+                            <constraint firstItem="mHY-LK-UFf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1ej-dU-Fs5"/>
+                            <constraint firstItem="mHY-LK-UFf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FmE-Hf-t0H"/>
+                            <constraint firstItem="mHY-LK-UFf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S1v-FL-Wmt"/>
+                            <constraint firstItem="mHY-LK-UFf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Tvm-jN-FRe"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch" width="238" height="236"/>
+        <image name="icon" width="526" height="525"/>
     </resources>
 </document>

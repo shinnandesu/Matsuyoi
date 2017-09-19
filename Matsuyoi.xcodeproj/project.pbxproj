@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1815A6D41F39940200DAA686 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815A6D31F39940200DAA686 /* CoreLocation.framework */; };
 		1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */; };
+		183401A61F6A557400B6F19A /* Bobz Type.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183401A51F6A553C00B6F19A /* Bobz Type.ttf */; };
+		183401A91F6AC4AE00B6F19A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183401A81F6AC4AE00B6F19A /* ContactViewController.swift */; };
 		18817CF41F319B420047353F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18817CF31F319B420047353F /* LoginViewController.swift */; };
 		188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */; };
 		188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AF1F2C3A8E00728BD9 /* ViewController.swift */; };
@@ -20,9 +22,7 @@
 		188418DF1F2C430900728BD9 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418DE1F2C430900728BD9 /* CustomKolodaView.swift */; };
 		188418E11F2C432900728BD9 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */; };
 		188FB40C1F440B2200C4A080 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40B1F440B2200C4A080 /* SettingsViewController.swift */; };
-		188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB40E1F4426E000C4A080 /* ProfileViewController.swift */; };
 		188FB4141F4483CA00C4A080 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4131F4483CA00C4A080 /* CustomCells.swift */; };
-		188FB4161F44876700C4A080 /* LocationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FB4151F44876700C4A080 /* LocationSettingViewController.swift */; };
 		18A4A6F31F46B1650089EF0D /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */; };
 		18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */; };
 		18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */; };
@@ -55,8 +55,10 @@
 /* Begin PBXFileReference section */
 		1815A6D31F39940200DAA686 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		183401A51F6A553C00B6F19A /* Bobz Type.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bobz Type.ttf"; path = "../../../Downloads/bobz_type/Bobz Type.ttf"; sourceTree = "<group>"; };
+		183401A81F6AC4AE00B6F19A /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		18817CF31F319B420047353F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		188418AA1F2C3A8E00728BD9 /* Matsuyoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matsuyoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		188418AA1F2C3A8E00728BD9 /* MATSUYOI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSUYOI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188418AF1F2C3A8E00728BD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		188418B21F2C3A8E00728BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,9 +74,7 @@
 		188418DE1F2C430900728BD9 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
 		188FB40B1F440B2200C4A080 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		188FB40E1F4426E000C4A080 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		188FB4131F4483CA00C4A080 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
-		188FB4151F44876700C4A080 /* LocationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSettingViewController.swift; sourceTree = "<group>"; };
 		18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		188418AB1F2C3A8E00728BD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				188418AA1F2C3A8E00728BD9 /* Matsuyoi.app */,
+				188418AA1F2C3A8E00728BD9 /* MATSUYOI.app */,
 				188418C11F2C3A8E00728BD9 /* MatsuyoiTests.xctest */,
 				188418CC1F2C3A8E00728BD9 /* MatsuyoiUITests.xctest */,
 			);
@@ -148,6 +148,7 @@
 		188418AC1F2C3A8E00728BD9 /* Matsuyoi */ = {
 			isa = PBXGroup;
 			children = (
+				183401A51F6A553C00B6F19A /* Bobz Type.ttf */,
 				188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */,
 				18817CF31F319B420047353F /* LoginViewController.swift */,
 				18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */,
@@ -156,8 +157,7 @@
 				18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */,
 				18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */,
 				188FB40B1F440B2200C4A080 /* SettingsViewController.swift */,
-				188FB4151F44876700C4A080 /* LocationSettingViewController.swift */,
-				188FB40E1F4426E000C4A080 /* ProfileViewController.swift */,
+				183401A81F6AC4AE00B6F19A /* ContactViewController.swift */,
 				18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */,
 				188418B11F2C3A8E00728BD9 /* Main.storyboard */,
 				188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */,
@@ -236,7 +236,7 @@
 			);
 			name = Matsuyoi;
 			productName = Matsuyoi;
-			productReference = 188418AA1F2C3A8E00728BD9 /* Matsuyoi.app */;
+			productReference = 188418AA1F2C3A8E00728BD9 /* MATSUYOI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		188418C01F2C3A8E00728BD9 /* MatsuyoiTests */ = {
@@ -293,7 +293,7 @@
 				TargetAttributes = {
 					188418A91F2C3A8E00728BD9 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = RHNH48U726;
+						DevelopmentTeam = QZWVXV782B;
 						ProvisioningStyle = Automatic;
 					};
 					188418C01F2C3A8E00728BD9 = {
@@ -333,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183401A61F6A557400B6F19A /* Bobz Type.ttf in Resources */,
 				188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */,
 				18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */,
 				18C053E01F5E842D00C3BAD0 /* Assets.xcassets in Resources */,
@@ -506,14 +507,13 @@
 				188418B01F2C3A8E00728BD9 /* ViewController.swift in Sources */,
 				18A4A6F31F46B1650089EF0D /* OnboardViewController.swift in Sources */,
 				1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */,
-				188FB40F1F4426E000C4A080 /* ProfileViewController.swift in Sources */,
 				188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */,
 				18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */,
 				18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */,
 				18817CF41F319B420047353F /* LoginViewController.swift in Sources */,
 				188FB4141F4483CA00C4A080 /* CustomCells.swift in Sources */,
-				188FB4161F44876700C4A080 /* LocationSettingViewController.swift in Sources */,
 				18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */,
+				183401A91F6AC4AE00B6F19A /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,13 +668,14 @@
 			baseConfigurationReference = 30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RHNH48U726;
+				DEVELOPMENT_TEAM = QZWVXV782B;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.Matsuyoi";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.ht.MATSUYOI";
+				PRODUCT_NAME = MATSUYOI;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,13 +684,14 @@
 			baseConfigurationReference = A2574624EF0BA7C6FC036A6E /* Pods-Matsuyoi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RHNH48U726;
+				DEVELOPMENT_TEAM = QZWVXV782B;
 				INFOPLIST_FILE = Matsuyoi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.Matsuyoi";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Life-Cloud.ht.MATSUYOI";
+				PRODUCT_NAME = MATSUYOI;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
