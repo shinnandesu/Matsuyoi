@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180D68B71F7A6CEB00ECBAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180D68B61F7A6CEB00ECBAF7 /* Assets.xcassets */; };
 		1815A6D41F39940200DAA686 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1815A6D31F39940200DAA686 /* CoreLocation.framework */; };
 		1815A6DE1F3AD8D200DAA686 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */; };
-		183401A61F6A557400B6F19A /* Bobz Type.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 183401A51F6A553C00B6F19A /* Bobz Type.ttf */; };
 		183401A91F6AC4AE00B6F19A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183401A81F6AC4AE00B6F19A /* ContactViewController.swift */; };
 		18817CF41F319B420047353F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18817CF31F319B420047353F /* LoginViewController.swift */; };
 		188418AE1F2C3A8E00728BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */; };
@@ -27,7 +27,6 @@
 		18B6EF001F2C90E0004F71A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */; };
 		18BCED8C1F3054ED00E2972C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */; };
 		18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BCED911F30555D00E2972C /* CustomOverlayView.xib */; };
-		18C053E01F5E842D00C3BAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */; };
 		18EB1EE81F30AAAA00D08D2C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EB1EE71F30AAAA00D08D2C /* MapKit.framework */; };
 		18FC326B1F2F3BA2008B891D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */; };
 		1B2078AA1C31B63AAF77344C /* Pods_MatsuyoiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F067A06B033E4CD5FA1A31 /* Pods_MatsuyoiTests.framework */; };
@@ -53,9 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180D68B61F7A6CEB00ECBAF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/Eureka-master/Example/Example/Assets.xcassets"; sourceTree = "<group>"; };
 		1815A6D31F39940200DAA686 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		183401A51F6A553C00B6F19A /* Bobz Type.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bobz Type.ttf"; path = "../../../Downloads/bobz_type/Bobz Type.ttf"; sourceTree = "<group>"; };
 		183401A81F6AC4AE00B6F19A /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		18817CF31F319B420047353F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		188418AA1F2C3A8E00728BD9 /* MATSUYOI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MATSUYOI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +78,6 @@
 		18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18BCED8B1F3054ED00E2972C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		18BCED911F30555D00E2972C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
-		18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		18EB1EE71F30AAAA00D08D2C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		30B10942CEFA80790F1D9AE4 /* Pods-Matsuyoi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matsuyoi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Matsuyoi/Pods-Matsuyoi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,17 +146,19 @@
 		188418AC1F2C3A8E00728BD9 /* Matsuyoi */ = {
 			isa = PBXGroup;
 			children = (
-				183401A51F6A553C00B6F19A /* Bobz Type.ttf */,
 				188418AD1F2C3A8E00728BD9 /* AppDelegate.swift */,
 				18817CF31F319B420047353F /* LoginViewController.swift */,
 				18A4A6F21F46B1650089EF0D /* OnboardViewController.swift */,
 				1815A6DD1F3AD8D200DAA686 /* LocationViewController.swift */,
+				18C944451F97128700D1B5E3 /* Controller */,
+				18C944441F97127D00D1B5E3 /* View */,
+				18C944431F97127300D1B5E3 /* Model */,
 				188418AF1F2C3A8E00728BD9 /* ViewController.swift */,
 				18FC326A1F2F3BA2008B891D /* CollectionViewController.swift */,
 				18B6EEFF1F2C90E0004F71A9 /* DetailViewController.swift */,
 				188FB40B1F440B2200C4A080 /* SettingsViewController.swift */,
 				183401A81F6AC4AE00B6F19A /* ContactViewController.swift */,
-				18C053DF1F5E842D00C3BAD0 /* Assets.xcassets */,
+				180D68B61F7A6CEB00ECBAF7 /* Assets.xcassets */,
 				188418B11F2C3A8E00728BD9 /* Main.storyboard */,
 				188418E01F2C432900728BD9 /* BackgroundKolodaAnimator.swift */,
 				188418DE1F2C430900728BD9 /* CustomKolodaView.swift */,
@@ -189,6 +189,27 @@
 				188418D21F2C3A8E00728BD9 /* Info.plist */,
 			);
 			path = MatsuyoiUITests;
+			sourceTree = "<group>";
+		};
+		18C944431F97127300D1B5E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18C944441F97127D00D1B5E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		18C944451F97128700D1B5E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		B71C1E0CA097D42F4E91C515 /* Frameworks */ = {
@@ -333,10 +354,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183401A61F6A557400B6F19A /* Bobz Type.ttf in Resources */,
 				188418BB1F2C3A8E00728BD9 /* LaunchScreen.storyboard in Resources */,
 				18BCED921F30555D00E2972C /* CustomOverlayView.xib in Resources */,
-				18C053E01F5E842D00C3BAD0 /* Assets.xcassets in Resources */,
+				180D68B71F7A6CEB00ECBAF7 /* Assets.xcassets in Resources */,
 				188418B31F2C3A8E00728BD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

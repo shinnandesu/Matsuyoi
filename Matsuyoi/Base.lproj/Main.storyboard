@@ -14,7 +14,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -30,32 +30,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TO-Yb-twf">
-                                <rect key="frame" x="222" y="529" width="64" height="64"/>
+                                <rect key="frame" x="212.5" y="529" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="701-h2-aKD"/>
-                                    <constraint firstAttribute="height" constant="64" id="uac-Rf-af0"/>
+                                    <constraint firstAttribute="width" secondItem="1TO-Yb-twf" secondAttribute="height" multiplier="1:1" id="CAf-0o-vTN"/>
                                 </constraints>
-                                <state key="normal" image="heart"/>
+                                <state key="normal" image="success"/>
                                 <connections>
                                     <action selector="goodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIW-wV-u8x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bs-re-jcW">
-                                <rect key="frame" x="170" y="545" width="35" height="33"/>
+                                <rect key="frame" x="179.5" y="556" width="16" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="E3m-hx-Cvi"/>
-                                    <constraint firstAttribute="width" constant="35" id="jqh-el-cF6"/>
+                                    <constraint firstAttribute="width" secondItem="8Bs-re-jcW" secondAttribute="height" multiplier="8:11" id="SLh-wC-du1"/>
                                 </constraints>
-                                <state key="normal" image="return"/>
+                                <state key="normal" image="reload"/>
                                 <connections>
                                     <action selector="returnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8m-GR-g7s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-PS-tuq">
-                                <rect key="frame" x="86" y="529" width="67" height="64"/>
+                                <rect key="frame" x="98.5" y="529" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="C1m-Bq-Im6"/>
-                                    <constraint firstAttribute="width" constant="67" id="VRF-DP-hhB"/>
+                                    <constraint firstAttribute="width" secondItem="PKz-PS-tuq" secondAttribute="height" multiplier="1:1" id="gjj-GI-xbh"/>
                                 </constraints>
                                 <state key="normal" image="cancel"/>
                                 <connections>
@@ -63,8 +60,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSy-RR-Wed">
-                                <rect key="frame" x="16" y="536" width="50" height="50"/>
+                                <rect key="frame" x="28.5" y="536" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="TSy-RR-Wed" secondAttribute="height" multiplier="1:1" id="FWy-vH-4UQ"/>
                                     <constraint firstAttribute="height" constant="50" id="QFl-Vg-gvo"/>
                                     <constraint firstAttribute="width" constant="50" id="i2h-bZ-yxi"/>
                                 </constraints>
@@ -74,9 +72,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPP-Hs-bTm">
-                                <rect key="frame" x="309" y="536" width="50" height="50"/>
+                                <rect key="frame" x="299.5" y="536" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4xH-ti-FWj"/>
+                                    <constraint firstAttribute="width" secondItem="PPP-Hs-bTm" secondAttribute="height" multiplier="1:1" id="7Lx-sU-Yfe"/>
                                     <constraint firstAttribute="width" constant="50" id="gvR-01-9YA"/>
                                 </constraints>
                                 <state key="normal" image="setting"/>
@@ -117,7 +116,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sul-yp-nnX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-Df-w8l" customClass="CustomKolodaView" customModule="Matsuyoi" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-Df-w8l" customClass="CustomKolodaView" customModule="MATSUYOI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -190,7 +189,7 @@
         <!--Location View Controller-->
         <scene sceneID="RXS-y1-xbV">
             <objects>
-                <viewController id="PKU-J0-hv1" customClass="LocationViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PKU-J0-hv1" customClass="LocationViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qCa-n1-IWC"/>
                         <viewControllerLayoutGuide type="bottom" id="eYg-e7-iqd"/>
@@ -229,7 +228,7 @@
         <!--Wish List-->
         <scene sceneID="cyG-dY-yTd">
             <objects>
-                <viewController id="bhJ-9M-M6Z" customClass="CollectionViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bhJ-9M-M6Z" customClass="CollectionViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f2W-L6-YLO"/>
                         <viewControllerLayoutGuide type="bottom" id="4G6-m7-FDt"/>
@@ -317,7 +316,7 @@
         <!--Detail View Controller-->
         <scene sceneID="yNj-KN-TES">
             <objects>
-                <viewController id="xhh-Md-dA6" customClass="DetailViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xhh-Md-dA6" customClass="DetailViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fdp-SD-tMd"/>
                         <viewControllerLayoutGuide type="bottom" id="YYw-QK-Iac"/>
@@ -460,7 +459,7 @@
                 <navigationController id="As8-w9-Kcj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="tabBarItem:ktv-DK-3gO:image" selectedImage="tabBarItem:ktv-DK-3gO:image" id="ktv-DK-3gO"/>
                     <navigationItem key="navigationItem" id="BkS-oH-JWR"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lDX-4k-u9s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lDX-4k-u9s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -476,7 +475,7 @@
         <!--Setting-->
         <scene sceneID="38W-aI-hdT">
             <objects>
-                <viewController storyboardIdentifier="setting" id="NC4-RD-yg8" customClass="SettingsViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setting" id="NC4-RD-yg8" customClass="SettingsViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YUs-4R-sZf"/>
                         <viewControllerLayoutGuide type="bottom" id="aqh-1O-Cfi"/>
@@ -518,7 +517,7 @@
         <!--Contact-->
         <scene sceneID="rDX-5N-L8j">
             <objects>
-                <viewController id="eTF-DS-wG5" customClass="ContactViewController" customModule="Matsuyoi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eTF-DS-wG5" customClass="ContactViewController" customModule="MATSUYOI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azj-BD-Lnf"/>
                         <viewControllerLayoutGuide type="bottom" id="WhX-Za-nQo"/>
@@ -555,13 +554,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StarEmpty" width="64" height="64"/>
-        <image name="StarFull" width="64" height="64"/>
+        <image name="StarEmpty" width="32" height="32"/>
+        <image name="StarFull" width="8" height="8"/>
         <image name="cancel" width="64" height="64"/>
-        <image name="heart" width="64" height="64"/>
-        <image name="location" width="128" height="128"/>
-        <image name="return" width="21" height="21"/>
-        <image name="setting" width="128" height="128"/>
+        <image name="location" width="64" height="64"/>
+        <image name="reload" width="16" height="16"/>
+        <image name="setting" width="64" height="64"/>
+        <image name="success" width="64" height="64"/>
         <image name="tabBarItem:ktv-DK-3gO:image" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU

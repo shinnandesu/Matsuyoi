@@ -77,7 +77,6 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        locationButton.setBackgroundImage(#imageLiteral(resourceName: "location"), for: .selected)
         
         currentLatitude = userDefaults.double(forKey: "currentlat")
         currentLongitude = userDefaults.double(forKey: "currentlng")
