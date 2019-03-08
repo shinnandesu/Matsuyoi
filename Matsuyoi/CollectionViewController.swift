@@ -40,10 +40,10 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         //ナビゲーションバーの設定
 //        //バー背景色
 //        self.navigationController?.navigationBar.barTintColor = UIColor.black
-//        
+//
 //        //バーアイテムカラー
 //        self.navigationController?.navigationBar.tintColor = UIColor.white
-//        
+//
 //        //ナビゲーションタイトル文字列の変更
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
@@ -190,10 +190,11 @@ class CollectionViewController: UIViewController ,UICollectionViewDataSource, UI
         // Present dialog
         self.present(popup, animated: animated, completion: nil)
     }
-        
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
+

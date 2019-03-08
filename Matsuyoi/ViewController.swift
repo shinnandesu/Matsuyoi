@@ -117,36 +117,6 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
-//        //カテゴリ検索の欄
-//        let titleCont = TZSegmentedControl(sectionTitles: ["All","Food", "Night", "Ramen", "etc.","Japanese","Korean","All","Food", "Night", "Ramen", "etc.","Japanese","Korean" ])
-//        titleCont.frame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: 50)
-//        titleCont.indicatorWidthPercent = 0.0
-//        titleCont.backgroundColor = UIColor.white
-//        let whitishColor = UIColor(white: 0.75, alpha: 1.0)
-//        titleCont.borderColor = UIColor.lightGray
-//        titleCont.borderWidth = 0.5
-//        titleCont.segmentWidthStyle = .dynamic
-//        titleCont.verticalDividerEnabled = true
-//        titleCont.verticalDividerWidth = 0.5
-//        titleCont.verticalDividerColor = UIColor.lightGray
-//        titleCont.selectionStyle = .box
-//        titleCont.selectionIndicatorLocation = .down
-//        titleCont.selectionIndicatorColor = UIColor.darkGray
-//        titleCont.selectionIndicatorHeight = 2.0
-//        titleCont.borderType = .top
-//        titleCont.edgeInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-//        titleCont.selectedTitleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-//        titleCont.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.darkGray,
-//                                         NSFontAttributeName:UIFont(name: "Tahoma", size: 10.0) ?? UIFont.systemFont(ofSize: 13)]
-//        self.view.addSubview(titleCont)
-//        
-//        titleCont.indexChangeBlock = { (index) in
-//            self.userDefaults.set(titleCont.sectionTitles[index], forKey: "category")
-//            self.Category = self.userDefaults.string(forKey: "category")!
-//            print(self.Category)
-//            self.checkNetwork()
-//            
-//        }
 
         
         checkNetwork()
@@ -189,12 +159,12 @@ class ViewController: UIViewController,FloatRatingViewDelegate,UIViewControllerT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         _ = segue.destination
         
-        //セグエの設定
-        if segue.identifier == "nextSegue" {
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.SelectedList = selectedList
-            detailViewController.SelectedType = selectedType
-        }
+//        //セグエの設定
+//        if segue.identifier == "nextSegue" {
+//            let detailViewController = segue.destination as! DetailViewController
+//            detailViewController.SelectedList = selectedList
+//            detailViewController.SelectedType = selectedType
+//        }
     }
        //位置情報更新
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -488,7 +458,7 @@ extension ViewController: KolodaViewDelegate {
 
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         let realm = try! Realm()
-        switch direction {
+       switch direction {
         case .left :
             if self.spotLists.count != 0{
                 if let swipenames  = self.spotLists[Int(index)].name{
@@ -514,6 +484,7 @@ extension ViewController: KolodaViewDelegate {
                 let goodList = [self.spotLists[Int(index)]]
                 try! realm.write() {
                     realm.add(goodList)
+
                 }
             }
             revertButton.isEnabled = true

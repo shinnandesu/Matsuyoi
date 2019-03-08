@@ -18,7 +18,6 @@ target 'Matsuyoi' do
   pod "PopupDialog"
   pod "StatusProvider"
   pod "TabPageViewController"
-  pod "Eureka"
   pod "paper-onboarding"
   pod "FlexiblePageControl"
   pod "TZSegmentedControl"

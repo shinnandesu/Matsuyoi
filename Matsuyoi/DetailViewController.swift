@@ -128,29 +128,29 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
     }
 
 //    @IBAction func tapTrash(_ sender: Any) {
-//        
+//
 //        let realm = try! Realm()
 //        let objs = realm.objects(SpotList.self)
 //        reversObjs = objs.reversed()    //オブジェクトを降順にする
 //        // Prepare the popup
 //        let title = "Delete This Data"
 //        let message = "お気に入りから削除しますか？"
-//        
+//
 //        // Create the dialog
 //        let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
 //        }
-//        
+//
 //        // Create first button
 //        let buttonOne = CancelButton(title: "CANCEL") {
 //        }
-//        
+//
 //        // Create second button
 //        let buttonTwo = DefaultButton(title: "OK") {
 //            self.navigationController?.popViewController(animated: true)
 //        }
 //        // Add buttons to dialog
 //        popup.addButtons([buttonOne, buttonTwo])
-//        
+//
 //        // Present dialog
 //        self.present(popup, animated: true, completion: nil)
 //    }
@@ -234,4 +234,5 @@ class DetailViewController: UIViewController,FloatRatingViewDelegate{
     }
 
 }
+
 

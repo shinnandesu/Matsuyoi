@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4845B29A72465E24301B10094CCBB8D1'
+               BlueprintIdentifier = 'EC3369F3A3A719E657013B6992973D96'
                BlueprintName = 'TZSegmentedControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'TZSegmentedControl.framework'>

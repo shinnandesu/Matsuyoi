@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.5.0)
-  - Eureka (3.1.0)
   - FlexiblePageControl (1.0.5)
   - FloatRatingView (2.0)
   - Koloda (4.1):
@@ -27,7 +26,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Eureka
   - FlexiblePageControl
   - FloatRatingView
   - Koloda
@@ -44,7 +42,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Eureka: d6725c38d0dcdceaa331d1468f75e76315715ae0
   FlexiblePageControl: 70caa5dad6603a7b361b154fa8b75295a8c44f9b
   FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
   Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
@@ -62,6 +59,6 @@ SPEC CHECKSUMS:
   TZSegmentedControl: c71a023749aedb5e7ec9a991f5ff167650dfc80f
   ZKCarousel: 36143c4667c89c70c89ccda9e1e01af2fcbb5a9e
 
-PODFILE CHECKSUM: eb8c2bbffc209b6c08d8a456ace8e1e51227e25e
+PODFILE CHECKSUM: 01bf85c7c20d875b2a3b3d00b3930661479f9cbf
 
 COCOAPODS: 1.2.1

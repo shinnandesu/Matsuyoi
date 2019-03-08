@@ -90,7 +90,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FlexiblePageControl/FlexiblePageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FloatRatingView/FloatRatingView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRActivityIndicatorView/KRActivityIndicatorView.framework"
@@ -110,7 +109,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FlexiblePageControl/FlexiblePageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FloatRatingView/FloatRatingView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KRActivityIndicatorView/KRActivityIndicatorView.framework"
